@@ -33,7 +33,7 @@ gulp.task('styles', () => {
             this.emit('end');
         }))
         .pipe(sourcemaps.init())
-        .pipe(autoprefixer())
+        //.pipe(autoprefixer())
         .pipe(sass({
             outputStyle: 'compressed'
         }))
@@ -99,7 +99,7 @@ gulp.task('default', [
 // watch for changes
 gulp.task('watch', ['default'], () => {
     console.log('watching for changes...');
-    require('./server.js');
+    // require('./server.js');
     livereload.listen();
     // gulp.watch(paths.scripts, ['scripts']);
     gulp.watch(paths.styles, ['styles']);
