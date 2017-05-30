@@ -1,19 +1,43 @@
-// packages
-import gulp from 'gulp';
-import uglify from 'gulp-uglify';
-import livereload from 'gulp-livereload';
-import concat from 'gulp-concat';
+/**
+ * Gulpfile.
+ *
+ * Gulp with WordPress.
+ *
+ * @author Adam Norris (@acnorrisuk)
+ * @version 1.0.0
+ */ 
+
+/**
+ * Load Plugins.
+ */
+
+import gulp from 'gulp'; // get gulp
+
+// CSS plugins
+import sass from 'gulp-sass';
 import minifyCss from 'gulp-minify-css';
 import autoprefixer from 'gulp-autoprefixer';
-import plumber from 'gulp-plumber';
-import sourcemaps from 'gulp-sourcemaps';
-import sass from 'gulp-sass';
-import babel from 'gulp-babel';
-import notify from 'gulp-notify';
+
+//JS plugins
+//import uglify from 'gulp-uglify';
+//import concat from 'gulp-concat';
+//import babel from 'gulp-babel';
+
+// Image plugins
 //import imagemin from 'gulp-imagemin';
+
+// Utility plugins
+import sourcemaps from 'gulp-sourcemaps';
+import plumber from 'gulp-plumber';
+import notify from 'gulp-notify';
+import livereload from 'gulp-livereload';
+
 //import del from 'del';
 
-// file paths
+/**
+ * File Paths.
+ */
+
 const paths = {
     dist: './',
     scripts: 'js/**/*.js',
@@ -21,17 +45,9 @@ const paths = {
     images: '../../uploads/**/*.{png,jpeg,jpg,svg,gif}'
 }
 
-// error handling
-var onError = function (err) {
-    notify({
-         title: 'Gulp Task Error',
-         message: 'Check the console.'
-     }).write(err);
-
-     console.log(err.toString());
-
-     this.emit('end');
-}
+/**
+ * Gulp Tasks
+ */
 
 // styles
 gulp.task('styles', () => {
@@ -90,6 +106,18 @@ gulp.task('styles', () => {
 //         ]))
 //         .pipe(gulp.dest(paths.dist + '/images'))
 // });
+
+// error handling
+var onError = function (err) {
+    notify({
+         title: 'Gulp Task Error',
+         message: 'Check the console.'
+     }).write(err);
+
+     console.log(err.toString());
+
+     this.emit('end');
+}
 
 // clear out the dist folder
 // gulp.task('clean', () => {
