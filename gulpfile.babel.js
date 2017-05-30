@@ -40,9 +40,10 @@ import livereload from 'gulp-livereload';
 
 const paths = {
     dist: './',
-    scripts: 'js/**/*.js',
-    styles: 'sass/**/*.scss',
-    images: '../../uploads/**/*.{png,jpeg,jpg,svg,gif}'
+    //scripts: './js/**/*.js',
+    stylesFolder: './sass/**/*.scss',
+    //images: '../../uploads/**/*.{png,jpeg,jpg,svg,gif}',
+    phpFiles: './**/*.php'
 }
 
 /**
@@ -51,16 +52,14 @@ const paths = {
 
 // styles
 gulp.task('styles', () => {
-    console.log('starting styles task...'); 
-    
     return gulp.src('sass/style.scss')
         .pipe(plumber({ errorHandle: onError }))
         .pipe(sourcemaps.init())
-        //.pipe(autoprefixer())
         .pipe(sass({
             outputStyle: 'compressed'
         }))
         .on('error', onError)
+        .pipe(autoprefixer())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(paths.dist))
         .pipe(notify({
@@ -138,9 +137,9 @@ gulp.task('default', [
 
 // watch for changes
 gulp.task('watch', ['default'], () => {
-    console.log('watching for changes...');
     // require('./server.js');
     livereload.listen();
     // gulp.watch(paths.scripts, ['scripts']);
-    gulp.watch(paths.styles, ['styles']);
+    gulp.watch(paths.stylesFolder, ['styles']);
+    //gulp.watch(paths.phpFiles, ).pipe(livereload());
 });
