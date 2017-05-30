@@ -9,10 +9,9 @@ import plumber from 'gulp-plumber';
 import sourcemaps from 'gulp-sourcemaps';
 import sass from 'gulp-sass';
 import babel from 'gulp-babel';
-import imagemin from 'gulp-imagemin';
-import imageminPngquant from 'imagemin-pngquant';
-import imageminJpegRecompress from 'imagemin-jpeg-recompress';
-import del from 'del';
+import notify from 'gulp-notify';
+//import imagemin from 'gulp-imagemin';
+//import del from 'del';
 
 // file paths
 const paths = {
@@ -22,23 +21,36 @@ const paths = {
     images: '../../uploads/**/*.{png,jpeg,jpg,svg,gif}'
 }
 
+// error handling
+var onError = function (err) {
+    notify({
+         title: 'Gulp Task Error',
+         message: 'Check the console.'
+     }).write(err);
+
+     console.log(err.toString());
+
+     this.emit('end');
+}
+
 // styles
 gulp.task('styles', () => {
     console.log('starting styles task...'); 
     
     return gulp.src('sass/style.scss')
-        .pipe(plumber(function (err){
-            console.log('styles tasks error:');
-            console.log(err);
-            this.emit('end');
-        }))
+        .pipe(plumber({ errorHandle: onError }))
         .pipe(sourcemaps.init())
         //.pipe(autoprefixer())
         .pipe(sass({
             outputStyle: 'compressed'
         }))
+        .on('error', onError)
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(paths.dist))
+        .pipe(notify({
+            title   : 'Gulp Task Complete',
+            message : 'Styles have been compiled'
+        }))
         .pipe(livereload());
 });
 
