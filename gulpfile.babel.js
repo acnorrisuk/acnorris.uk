@@ -1,59 +1,72 @@
 /**
- * Gulpfile.
- *
  * Gulp with WordPress.
  *
  * @author Adam Norris (@acnorrisuk)
- * @version 1.0.0
+ * @version 1.3.0
  */ 
 
-/**
+/** ================================
  * Load Plugins.
- */
+ * 
+ * 1. Gulp
+ * 2. Sass
+ * 3. Minify CSS
+ * 4. Autoprefixer
+ * 5. Uglify
+ * 6. Concat
+ * 7. Babel
+ * 8. Imagemin
+ * 9. Sourcemaps
+ * 10. Plumber
+ * 11. Notify
+ * 12. BrowserSync
+ * ============================== */
 
-import gulp from 'gulp'; // get gulp
-
-// CSS plugins
+import gulp from 'gulp';
 import sass from 'gulp-sass';
 import minifyCss from 'gulp-minify-css';
 import autoprefixer from 'gulp-autoprefixer';
-
-//JS plugins
 //import uglify from 'gulp-uglify';
 //import concat from 'gulp-concat';
 //import babel from 'gulp-babel';
-
-// Image plugins
-//import imagemin from 'gulp-imagemin';
-
-// Utility plugins
+import imagemin from 'gulp-imagemin';
 import sourcemaps from 'gulp-sourcemaps';
 import plumber from 'gulp-plumber';
 import notify from 'gulp-notify';
-//import livereload from 'gulp-livereload';
 import browserSync from 'browser-sync';
 const reload = browserSync.reload;
-
 //import del from 'del';
+// gulp include https://www.npmjs.com/package/gulp-include
 
-/**
- * File Paths.
- */
+/** ================================
+ * Config
+ * 
+ * Settings for input and output paths
+ * ============================== */
 
 const paths = {
     dist: './',
-    //scripts: './js/**/*.js',
-    stylesFolder: './sass/**/*.scss',
-    //images: '../../uploads/**/*.{png,jpeg,jpg,svg,gif}',
-    phpFiles: './**/*.php',
+    scripts: './js/**/*.js',
+    styles: './sass/**/*.scss',
+    images: './img/**/*.{png,jpeg,jpg,svg,gif}',
+    php: './**/*.php',
     url: 'http://localhost:8888/acnorrisuk/'
 }
 
-/**
+/** ================================
  * Gulp Tasks
- */
+ * 
+ * 1. Styles
+ * 2. Scripts
+ * 3. Images
+ * 4. PHP
+ * 5. BrowserSync
+ * 6. Error Handling
+ * 7. Clean
+ * 8. Watch
+ * 9. Default
+ * ============================== */
 
-// styles
 gulp.task('styles', () => {
     return gulp.src('sass/style.scss')
         .pipe(plumber({ errorHandle: onError }))
@@ -63,66 +76,50 @@ gulp.task('styles', () => {
         }))
         .on('error', onError)
         .pipe(autoprefixer())
-        .pipe(sourcemaps.write())
+        .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(paths.dist))
         .pipe(reload({stream: true}))
         .pipe(notify({
             title   : 'Gulp Task Complete',
             message : 'Styles have been compiled'
         }))
-        //.pipe(livereload());
 });
 
-// scripts
-// gulp.task('scripts', () => {
-//     console.log('starting scripts task...');
-    
-//     return gulp.src(paths.scripts)
-//         .pipe(plumber(function (err){
-//             console.log('scripts task error:');
-//             console.log(err);
-//             this.emit('end');
-//         }))
-//         .pipe(sourcemaps.init())
-//         .pipe(babel({
-//             presets: ['es2015']
-//         }))
-//         .pipe(uglify())
-//         .pipe(concat('scripts.js'))
-//         .pipe(sourcemaps.write())
-//         .pipe(gulp.dest(paths.dist))
-//         .pipe(livereload());
-// });
+gulp.task('scripts', () => {
+    return gulp.src(paths.scripts)
+        .pipe(plumber({ errorHandle: onError }))
+        .pipe(sourcemaps.init())
+        .pipe(babel({
+            presets: ['es2015']
+        }))
+        .pipe(uglify())
+        .pipe(concat('main.min.js'))
+        .pipe(sourcemaps.write('./js'))
+        .pipe(gulp.dest(paths.dist + 'js'))
+        .pipe(reload({stream: true}))
+        .pipe(notify({
+            title   : 'Gulp Task Complete',
+            message : 'Scripts have been compiled'
+        }))
+});
 
-// images
-// gulp.task('images', () => {
-//     console.log('starting images task...');
-    
-//     return gulp.src(paths.images)
-//         .pipe(imagemin([
-//             imagemin.gifsicle(),
-//             imagemin.jpegtran(),
-//             imagemin.optipng(),
-//             imagemin.svgo(),
-//             imageminPngquant(),
-//             imageminJpegRecompress()
-//         ]))
-//         .pipe(gulp.dest(paths.dist + '/images'))
-// });
+gulp.task('images', () => {
+    return gulp.src(paths.images)
+        .pipe(imagemin())
+        .pipe(gulp.dest(paths.dist + 'img'))
+});
 
-// php tasks
 gulp.task('php', function(){
-    gulp.src(paths.phpFiles);
+    gulp.src(paths.php)
+    .pipe(reload({stream: true}))
 });
 
-// browsersync taks
 gulp.task('browser-sync', function(){
     browserSync.init({
         proxy: paths.url
     });
 });
 
-// error handling
 const onError = function (err) {
     notify({
          title: 'Gulp Task Error',
@@ -141,21 +138,16 @@ const onError = function (err) {
 //     ])
 // });
 
-// watch for changes
 gulp.task('watch', ['default'], () => {
-    // require('./server.js');
-    //livereload.listen();
-    // gulp.watch(paths.scripts, ['scripts']);
-    gulp.watch(paths.stylesFolder, ['styles']);
-    gulp.watch(paths.phpFiles, ['php']);
+    gulp.watch(paths.scripts, ['scripts']);
+    gulp.watch(paths.styles, ['styles']);
+    gulp.watch(paths.php, ['php']);
 });
 
-// default tasks
 gulp.task('default', [
     // 'clean',
-    // 'images',
+    'images',
     'styles',
     'php',
-    'browser-sync'
-    // 'scripts'
+    'scripts'
 ]);

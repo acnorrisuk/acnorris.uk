@@ -12,7 +12,6 @@
         <script src="<?php echo get_template_directory_uri(); ?>/js/vendor/modernizr-2.8.3.min.js"></script>
     <?php wp_head(); ?>
     </head>
-     kkk
     <body <?php body_class(); ?>>
            <header class="masthead">
            
