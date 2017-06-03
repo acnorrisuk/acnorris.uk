@@ -31,6 +31,8 @@ import sourcemaps from 'gulp-sourcemaps';
 import plumber from 'gulp-plumber';
 import notify from 'gulp-notify';
 import livereload from 'gulp-livereload';
+import browserSync from 'browser-sync'
+browserSync.create();
 
 //import del from 'del';
 
@@ -106,8 +108,13 @@ gulp.task('styles', () => {
 //         .pipe(gulp.dest(paths.dist + '/images'))
 // });
 
+// php tasks
+gulp.task('php', function(){
+    gulp.src(paths.phpFiles);
+});
+
 // error handling
-var onError = function (err) {
+const onError = function (err) {
     notify({
          title: 'Gulp Task Error',
          message: 'Check the console.'
@@ -125,21 +132,20 @@ var onError = function (err) {
 //     ])
 // });
 
-// run all tasks
-gulp.task('default', [
-    // 'clean',
-    // 'images',
-    'styles'
-    // 'scripts'
-], () => {
-    console.log('starting default task...');
-});
-
 // watch for changes
 gulp.task('watch', ['default'], () => {
     // require('./server.js');
     livereload.listen();
     // gulp.watch(paths.scripts, ['scripts']);
     gulp.watch(paths.stylesFolder, ['styles']);
-    //gulp.watch(paths.phpFiles, ).pipe(livereload());
+    gulp.watch(paths.phpFiles, ['php']);
 });
+
+// default tasks
+gulp.task('default', [
+    // 'clean',
+    // 'images',
+    'styles',
+    'php'
+    // 'scripts'
+]);
