@@ -30,9 +30,9 @@ import autoprefixer from 'gulp-autoprefixer';
 import sourcemaps from 'gulp-sourcemaps';
 import plumber from 'gulp-plumber';
 import notify from 'gulp-notify';
-import livereload from 'gulp-livereload';
-import browserSync from 'browser-sync'
-browserSync.create();
+//import livereload from 'gulp-livereload';
+import browserSync from 'browser-sync';
+const reload = browserSync.reload;
 
 //import del from 'del';
 
@@ -45,7 +45,8 @@ const paths = {
     //scripts: './js/**/*.js',
     stylesFolder: './sass/**/*.scss',
     //images: '../../uploads/**/*.{png,jpeg,jpg,svg,gif}',
-    phpFiles: './**/*.php'
+    phpFiles: './**/*.php',
+    url: 'http://localhost:8888/acnorrisuk/'
 }
 
 /**
@@ -64,11 +65,12 @@ gulp.task('styles', () => {
         .pipe(autoprefixer())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(paths.dist))
+        .pipe(reload({stream: true}))
         .pipe(notify({
             title   : 'Gulp Task Complete',
             message : 'Styles have been compiled'
         }))
-        .pipe(livereload());
+        //.pipe(livereload());
 });
 
 // scripts
@@ -113,6 +115,13 @@ gulp.task('php', function(){
     gulp.src(paths.phpFiles);
 });
 
+// browsersync taks
+gulp.task('browser-sync', function(){
+    browserSync.init({
+        proxy: paths.url
+    });
+});
+
 // error handling
 const onError = function (err) {
     notify({
@@ -135,7 +144,7 @@ const onError = function (err) {
 // watch for changes
 gulp.task('watch', ['default'], () => {
     // require('./server.js');
-    livereload.listen();
+    //livereload.listen();
     // gulp.watch(paths.scripts, ['scripts']);
     gulp.watch(paths.stylesFolder, ['styles']);
     gulp.watch(paths.phpFiles, ['php']);
@@ -146,6 +155,7 @@ gulp.task('default', [
     // 'clean',
     // 'images',
     'styles',
-    'php'
+    'php',
+    'browser-sync'
     // 'scripts'
 ]);
