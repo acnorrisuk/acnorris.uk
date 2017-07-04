@@ -13,26 +13,14 @@
     <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?>>
-           <header class="masthead">
-           
-               <div class="wrap masthead__content">
-
-                   <div>
-                       <p class="site-logo">Adam Norris</p>
-                       <p class="site-tagline">Front-End Developer</p>
-                   </div>
-
-                   <nav class="main-navigation" aria-label="main navigation">
-                        <?php wp_nav_menu(array(
-                            'menu' => 'main_menu',
-                            'container' => false,
-                            'menu_class' => 'list-reset main-menu'
-                        ));
-                        ?>
-                    </nav>
-
+            <header class="masthead">
+            
+                <div class="wrap masthead__content">
+                    <img class="masthead__profile" src="<?php echo get_template_directory_uri();?>/img/adam-norris-profile-bw.jpg" alt="Adam Norris">
+                    <h1 class="masthead__logo">Adam Norris</h1>
+                    <p class="masthead__tagline">Front-End Developer</p>
                 </div>
-           
-           </header>
+            
+            </header>
 
         <main>
