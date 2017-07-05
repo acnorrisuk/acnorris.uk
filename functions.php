@@ -27,11 +27,3 @@ function acnorrisuk_setup() {
 }
 endif;
 add_action( 'after_setup_theme', 'acnorrisuk_setup' );
-
-/*
- * Show excerpt metabox
- */
-function acnorrisuk_addbox() {
-add_meta_box('postexcerpt', __('Excerpt'), 'post_excerpt_meta_box', 'page', 'normal', 'core');
-}
-add_action( 'admin_menu', 'acnorrisuk_addbox' );
