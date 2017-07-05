@@ -3,7 +3,7 @@
 <div class="wrap pad">
     
     <?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
-  
+         <a class="back-to-blog" href="<?php echo esc_url(site_url('/')); ?>">&larr; Back to Blog</a>
     <article class="post">
         <div class="post__meta">
             <span><?php echo get_the_date();?> on</span>

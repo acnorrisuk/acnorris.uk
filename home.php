@@ -14,6 +14,8 @@
 
     <?php endwhile; endif; ?>
 
+    <?php the_posts_pagination( array( 'mid_size'  => 3 ) ); ?>
+
 </div>
 
 <?php get_footer(); ?>

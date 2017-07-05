@@ -17,7 +17,7 @@
             
                 <div class="wrap masthead__content">
                     <img class="masthead__profile" src="<?php echo get_template_directory_uri();?>/img/adam-norris-profile-bw.jpg" alt="Adam Norris">
-                    <h1 class="masthead__logo">Adam Norris</h1>
+                    <h1 class="masthead__logo"><a href="<?php echo esc_url(site_url('/')); ?>">Adam Norris</a></h1>
                     <p class="masthead__tagline">Front-End Developer</p>
                 </div>
             

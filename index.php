@@ -2,12 +2,13 @@
 
 <div class="wrap pad">
     
-    <?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
+    <?php if( have_posts() ) : while( have_posts() ) : the_post();
 
         the_title();
         the_content();
+        echo 'this';
 
-    <?php endwhile; endif; ?>
+    endwhile; endif; ?>
 
 </div>
 
