@@ -16,8 +16,8 @@ $break-medium: 60em; /* 960px at 16px */
 html {
     box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    font-size: calc(16px + (20 - 16) * (100vw - 320px) / (1440 - 320));
-    line-height: 1.6;
+    font-size: calc(16px + (18 - 16) * (100vw - 320px) / (1440 - 320));
+    line-height: 1.7;
     color: $color-primary;
 }
 
@@ -243,7 +243,6 @@ pre code {
 .pagination a,
 .pagination .current {
     text-decoration: none;
-    font-size: 0.9rem;
     padding: 0.5rem;
     color: $color-med-grey;
 }
@@ -260,8 +259,8 @@ pre code {
 .site-footer {
     text-align: center;
     color: $color-med-grey;
-    padding-top: 4rem;
-    padding-bottom: 3rem;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
     background-color: $color-near-white;
 }
 
