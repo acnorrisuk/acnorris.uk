@@ -25,5 +25,5 @@
     <?php endwhile; endif; ?>
 
 </div>
-<script>hljs.initHighlightingOnLoad();</script>;
+
 <?php get_footer(); ?>

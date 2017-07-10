@@ -76,3 +76,16 @@ function disable_wp_emojicons() {
   add_filter( 'tiny_mce_plugins', 'disable_emojicons_tinymce' );
 }
 add_action( 'init', 'disable_wp_emojicons' );
+
+/*
+* Disable Jetpack CSS
+*/
+add_filter( 'jetpack_implode_frontend_css', '__return_false' );
+
+/*
+* Disable Jetpack Retina Images
+*/
+function tj_dequeue_devicepx() {
+    wp_dequeue_script( 'devicepx' );
+}
+add_action( 'wp_enqueue_scripts', 'tj_dequeue_devicepx' );

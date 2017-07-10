@@ -139,7 +139,7 @@ const onError = function (err) {
 // });
 
 gulp.task('watch', ['default'], () => {
-    gulp.watch(paths.scripts, ['scripts']);
+    //gulp.watch(paths.scripts, ['scripts']);
     gulp.watch(paths.styles, ['styles']);
     gulp.watch(paths.php, ['php']);
 });
