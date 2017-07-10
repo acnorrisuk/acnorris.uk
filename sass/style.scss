@@ -12,11 +12,12 @@ $color-med-grey: lighten($color-primary, 20%);
 $color-near-white: lighten($color-primary, 76%);
 
 $break-medium: 60em; /* 960px at 16px */
+$break-large: 100em; /* 1600px at 16px */
     
 html {
     box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    font-size: calc(16px + (18 - 16) * (100vw - 320px) / (1440 - 320));
+    font-size: calc(16px + (19 - 16) * (100vw - 320px) / (1440 - 320));
     line-height: 1.7;
     color: $color-primary;
 }
@@ -106,11 +107,29 @@ pre code {
     padding: 1.5rem !important;
 }
 
+input {
+    padding: 0.5rem;
+    border: 1px solid $color-near-white;
+}
+
+input[type="submit"], button {
+    background-color: $color-med-grey;
+    color: #fff;
+    &:hover {
+        background-color: $color-primary;
+    }
+}
+
+/* layout */
 .wrap {
-    max-width: 43.750em;
+    max-width: 66ch;
     margin: 0 auto;
     padding-left: 1rem;
     padding-right: 1rem;
+}
+
+.wrap--large {
+    max-width: 64em;
 }
 
 .pad {
@@ -118,6 +137,16 @@ pre code {
     padding-bottom: 4rem;
 }
 
+.has-sidebar {
+    //@media(min-width: $break-medium) {
+        display: grid;
+        grid-column-gap: 8rem;
+        grid-template-columns: 66ch auto;
+        grid-template-rows: 1fr;
+    //}
+}
+
+/* helpers */
 .screen-reader-text {
     clip: rect(1px, 1px, 1px, 1px);
     clip-path: polygon(0px 0px, 0px 0px,0px 0px, 0px 0px);
@@ -144,6 +173,9 @@ pre code {
 .masthead__profile {
     width: 125px;
     border-radius: 50%;
+    @media(min-width: $break-large) {
+        width: 150px;
+    }
 }
 
 .masthead__logo {
@@ -192,8 +224,9 @@ pre code {
     font-size: 1.8rem;
 }
 
-.blog .post__title {
+.posts .post__title {
     margin-bottom: 0;
+    font-size: 1.6rem;
 }
 
 .post__title a,
@@ -248,6 +281,40 @@ pre code {
     text-decoration: underline;
     text-decoration-skip: ink;
     color: $color-primary;
+}
+
+/* search */
+.search-form {
+    display: flex;
+}
+
+.pagetitle {
+    margin-top: 0;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+    font-weight: normal;
+    font-size: 1.25rem;
+}
+
+/* sidebar */
+.post-category {
+    font-weight: normal;
+    margin-bottom: 0;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+.post-category:first-child {
+    margin-top: 0.5rem;
+}
+
+.post-category a {
+    text-decoration: none;
+    color: $color-med-grey;
+    &:hover {
+        text-decoration: underline;
+        color: $color-primary;
+    }   
 }
 
 /* footer */
