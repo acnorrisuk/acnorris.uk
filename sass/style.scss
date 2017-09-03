@@ -172,10 +172,6 @@ input {
     background-color: $color-primary;
     padding-top: 5rem;
     padding-bottom: 5rem;
-    text-align: center;
-    @media(min-width: $break-medium) {
-        text-align: left;
-    }
 }
 
 .masthead__logo {
@@ -226,7 +222,6 @@ input {
 .post__meta {
     color: $color-med-grey;
     font-size: 0.8rem;
-    margin-bottom: 0.5rem;
     a {
         color: inherit;
     }
@@ -303,6 +298,8 @@ input {
 }
 
 .search-field {
+    border-radius: 0;
+    -webkit-appearance: none;
     max-width: 10rem;
 }
 
@@ -320,12 +317,9 @@ input {
     }
 }
 
-.pagetitle {
+.page-title {
     margin-top: 0;
-    padding-bottom: 0.5rem;
     margin-bottom: 2rem;
-    font-weight: normal;
-    font-size: 1.25rem;
 }
 
 /* sidebar */

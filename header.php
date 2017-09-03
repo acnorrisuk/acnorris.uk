@@ -14,7 +14,7 @@
             <header class="masthead">
             
                 <div class="wrap wrap--large masthead__content">
-                    <h1 class="masthead__logo"><a href="<?php echo esc_url(site_url('/')); ?>"><?php bloginfo('name');?></a></h1>
+                    <p class="masthead__logo"><a href="<?php echo esc_url(site_url('/')); ?>"><?php bloginfo('name');?></a></p>
                     <p class="masthead__tagline"><?php bloginfo('description');?></p>
                 </div>
             
