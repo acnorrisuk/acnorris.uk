@@ -15,7 +15,7 @@
 
      </div>
 
-     <h2>Years</h2>
+     <h2>Archive</h2>
 
      <div class="post-archive">
 

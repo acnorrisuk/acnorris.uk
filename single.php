@@ -1,6 +1,8 @@
 <?php get_header(); ?>
 
-<div class="wrap pad">
+<div class="wrap wrap--large pad">
+
+    <div class="post-wrap">
     
     <?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
          <a class="back-to-blog" href="<?php echo esc_url(site_url('/')); ?>">&larr; Back to Blog</a>
@@ -23,6 +25,8 @@
     </div>
 
     <?php endwhile; endif; ?>
+
+    </div>
 
 </div>
 

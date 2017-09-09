@@ -115,7 +115,7 @@ input {
 
 /* layout */
 .wrap {
-    max-width: 66ch;
+    max-width: 750px;
     margin: 0 auto;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -134,7 +134,7 @@ input {
     @media(min-width: $break-medium) {
         display: grid;
         grid-column-gap: 6rem;
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 750px 1fr;
         grid-template-areas: 
         "content sidebar";
     }
@@ -211,6 +211,10 @@ input {
 }
 .post:not(:first-of-type) {
     padding-top: 2rem;
+}
+
+.post-wrap {
+    max-width: 750px;
 }
 
 .post {
