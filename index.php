@@ -10,7 +10,7 @@
 
     <?php elseif(is_search() ): ?>
 
-        <h1 class="page-title">Articles including "<?php echo $s ?>"</h1>
+        <h1 class="page-title">Posts including "<?php echo $s ?>"</h1>
 
     <?php elseif(is_category() ): ?>
 

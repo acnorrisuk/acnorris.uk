@@ -193,7 +193,6 @@ input {
 }
 
 .masthead__tagline {
-    font-size: 1.1rem;
     text-transform: uppercase;
     margin-bottom: 0;
 }
@@ -222,6 +221,7 @@ input {
 .post__meta {
     color: $color-med-grey;
     font-size: 0.8rem;
+    margin-top: 0.5rem;
     a {
         color: inherit;
     }
@@ -229,11 +229,11 @@ input {
 
 .post__title {
     margin-top: 0;
+    margin-bottom: 0;
     font-size: 1.8rem;
 }
 
 .posts .post__title {
-    margin-bottom: 0;
     font-size: 1.4rem;
 }
 
@@ -244,6 +244,10 @@ input {
         text-decoration: underline;
         text-decoration-skip: ink;
     }   
+}
+
+.post__content {
+    margin-top: 2rem;
 }
 
 .post__links {
@@ -323,20 +327,27 @@ input {
 }
 
 /* sidebar */
-.post-category {
-    font-weight: normal;
-    margin-bottom: 0;
-    font-size: 0.95rem;
-    margin-top: 1rem;
+.post-archive__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.post-category:first-child {
+.post-archive__list li {
+    font-weight: normal;
+    margin-bottom: 0;
+    color: $color-med-grey;
+    font-size: 0.95rem;
     margin-top: 0.5rem;
 }
 
-.post-category a {
+.post-archive__list li:first-child {
+    margin-top: 0.5rem;
+}
+
+.post-archive__list li a {
     text-decoration: none;
-    color: $color-med-grey;
+    color: inherit;
     &:hover {
         text-decoration: underline;
         color: $color-primary;

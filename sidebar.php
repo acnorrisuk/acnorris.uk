@@ -4,18 +4,29 @@
 
     <h2>Categories </h2>
 
-    <div class="post-categories">
+    <div class="post-archive">
 
-        <?php $cats = get_categories();
-        foreach($cats as $cat) : ?>
-
-            <h3 class="post-category">
-                <a href="<?php echo get_category_link( $cat->cat_ID );?>">
-                    <?php echo $cat->name; ?> <span>(<?php echo $cat->count;?>)</span>
-                </a>
-            </h3>
-
-        <?php endforeach; ?>
+        <ul class="post-archive__list">
+            <?php $catse = wp_list_categories(array(
+            'show_count' => true,
+            'title_li' => ''
+            )); ?>
+        </ul>
 
      </div>
+
+     <h2>Years</h2>
+
+     <div class="post-archive">
+
+     <ul class="post-archive__list">
+        <?php $years = wp_get_archives(array(
+        'type' => 'yearly',
+        'show_post_count' => true,
+        )); ?>
+    </ul>
+
+     </div>
+
+
 </div>
