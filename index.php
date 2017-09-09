@@ -16,6 +16,10 @@
 
         <h1 class="page-title"><?php echo 'Posted In: ' . single_cat_title( '', false ); ?></h1>
 
+    <?php elseif(is_archive() ): ?>
+
+        <h1 class="page-title"><?php echo 'Posted In: ' . str_replace('Year: ','', get_the_archive_title()); ?></h1>
+
     <?php else : ?>
 
         <h1 class="page-title"><?php the_title(); ?></h1>
