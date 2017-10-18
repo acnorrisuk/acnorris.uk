@@ -75,7 +75,8 @@ img {
 figure {
     margin: 1.5rem 0;
     padding: 1rem 1.5em;
-    background-color: $color-near-white;
+    background-color: #fff;
+    border-left: 3px solid $color-primary;
     font-size: 0.9rem;
     h2, h3, h4 {
         margin-top: 0.5rem;
@@ -100,7 +101,7 @@ blockquote {
     padding: 1rem;
     padding-left: 1.5rem;
     font-size: 1rem;
-    background-color: $color-near-white;
+    background-color: #fff;
     border-left: 3px solid $color-primary;  
     p:last-child {
         margin-bottom: 0.25rem;
@@ -108,7 +109,9 @@ blockquote {
 }
 
 code {
-    background-color: $color-near-white; /* match highlight theme */ 
+    border-left: 3px solid $color-primary;
+    background-color: #fff;
+    
 }
 
 pre code {
@@ -142,9 +145,9 @@ input {
 .has-sidebar {
     @media(min-width: $break-medium) {
         display: grid;
-        grid-column-gap: 8rem;
+        grid-template-columns: $measure-regular 1fr 10rem;
         grid-template-areas: 
-        "content sidebar";
+        "content . sidebar";
     }
 }
 
@@ -230,8 +233,12 @@ input {
 }
 
 .posts .post {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    @media(min-width: $break-medium) {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
 }
 
 .post-wrap {
