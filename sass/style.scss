@@ -88,10 +88,9 @@ figure {
 
 figcaption, cite {
     display: block;
-    color: $color-med-grey; 
+    color: $color-near-black;
     font-size: 0.8rem;
     text-align: right;
-    font-style: italic;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
 }
@@ -101,7 +100,9 @@ blockquote {
     padding: 1rem;
     padding-left: 1.5rem;
     font-size: 1rem;
+    font-style: italic;
     background-color: #fff;
+    color: $color-med-grey;
     border-left: 3px solid $color-primary;  
     p:last-child {
         margin-bottom: 0.25rem;
@@ -109,12 +110,12 @@ blockquote {
 }
 
 code {
-    border-left: 3px solid $color-primary;
     background-color: #fff;
     
 }
 
 pre code {
+    border-left: 3px solid $color-primary;
     font-size: 0.9rem;
     padding: 1.5rem !important;
 }
@@ -138,14 +139,18 @@ input {
 }
 
 .pad {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    @media(min-width: $break-medium) {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
 }
 
 .has-sidebar {
     @media(min-width: $break-medium) {
         display: grid;
-        grid-template-columns: $measure-regular 1fr 10rem;
+        grid-template-columns: $measure-regular 1fr 12rem;
         grid-template-areas: 
         "content . sidebar";
     }
@@ -236,8 +241,8 @@ input {
     padding-top: 1rem;
     padding-bottom: 1rem;
     @media(min-width: $break-medium) {
-        padding-top: 2rem;
-        padding-bottom: 2rem;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
     }
 }
 
@@ -257,11 +262,17 @@ input {
 .post__title {
     margin-top: 0;
     margin-bottom: 0;
-    font-size: 2rem;
+    font-size: 1.75rem;
+    @media(min-width: $break-medium) {
+        font-size: 2rem;
+    }
 }
 
 .posts .post__title {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
+    @media(min-width: $break-medium) {
+        font-size: 1.75rem;
+    }
 }
 
 .post__content {
@@ -342,7 +353,10 @@ input {
 .page-title {
     margin-top: 0;
     margin-bottom: 2rem;
-    font-size: 2.5rem;
+    font-size: 2rem;
+    @media(min-width: $break-medium) {
+        font-size: 2.5rem;
+    }
     &:after {
         display: block;
         content: '';
