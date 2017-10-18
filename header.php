@@ -14,8 +14,10 @@
             <header class="masthead">
             
                 <div class="wrap wrap--large masthead__content">
-                    <p class="masthead__logo"><a href="<?php echo esc_url(site_url('/')); ?>"><?php bloginfo('name');?></a></p>
-                    <p class="masthead__tagline"><?php bloginfo('description');?></p>
+                    <a class="home-link" href="<?php echo esc_url(site_url('/')); ?>">
+                        <p class="masthead__logo"><?php bloginfo('name');?></p>
+                        <p class="masthead__tagline"><?php bloginfo('description');?></p>
+                    </a>
                 </div>
             
             </header>

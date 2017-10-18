@@ -2,7 +2,7 @@
 
     <?php get_search_form(); ?>
 
-    <h2>Categories </h2>
+    <h2 class="archive-title">Categories </h2>
 
     <div class="post-archive">
 
@@ -15,7 +15,7 @@
 
      </div>
 
-     <h2>Archive</h2>
+     <h2 class="archive-title">Archive</h2>
 
      <div class="post-archive">
 

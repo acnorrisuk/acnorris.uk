@@ -32,7 +32,7 @@ add_action( 'after_setup_theme', 'acnorrisuk_setup' );
 * Load styles and scripts
 */
 function acnorrisuk_scripts() {
-  wp_enqueue_style( 'acnorrisuk', get_stylesheet_uri(), null, '06072017' );
+  wp_enqueue_style( 'acnorrisuk', get_stylesheet_uri(), null, '22092017' );
 
   if(is_single()) {
   	wp_enqueue_script( 'highlight-js', get_template_directory_uri() . '/js/vendor/highlight.pack.min.js', array(), false, true);

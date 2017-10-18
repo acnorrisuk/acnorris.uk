@@ -7,7 +7,7 @@
     <?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
          <a class="back-to-blog" href="<?php echo esc_url(site_url('/')); ?>">&larr; Back to Blog</a>
     <article class="post">
-        <h2 class="post__title"><?php the_title(); ?></h2>
+        <h1 class="post__title"><?php the_title(); ?></h1>
         <div class="post__meta">
             <span><?php echo get_the_date();?> on</span>
             <span><?php the_category(', '); ?></span>
