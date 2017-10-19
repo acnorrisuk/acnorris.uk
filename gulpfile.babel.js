@@ -35,6 +35,7 @@ import plumber from 'gulp-plumber';
 import notify from 'gulp-notify';
 import browserSync from 'browser-sync';
 const reload = browserSync.reload;
+//import critical from 'critical';
 //import del from 'del';
 // gulp include https://www.npmjs.com/package/gulp-include
 
