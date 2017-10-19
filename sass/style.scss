@@ -269,9 +269,26 @@ input {
 }
 
 .posts .post__title {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     @media(min-width: $break-medium) {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
+    }
+}
+
+.posts .post-categories {
+    padding-left: 0;
+    list-style-type: none;
+    li {
+        display: inline-flex;
+    }
+    a {
+        padding: 0.2rem 0.4rem;
+        color: #fff;
+        background-color: $color-primary;
+        &:hover {
+            color: #fff;
+            background-color: darken($color-primary, 5%);
+        }
     }
 }
 
@@ -352,10 +369,11 @@ input {
 
 .page-title {
     margin-top: 0;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     font-size: 2rem;
     @media(min-width: $break-medium) {
         font-size: 2.5rem;
+        margin-bottom: 2rem;
     }
     &:after {
         display: block;
