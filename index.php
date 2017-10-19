@@ -31,8 +31,11 @@
     <article class="post">
         <h2 class="post__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
         <div class="post__meta">
-            <span><?php echo get_the_date();?> on</span>
-            <span><?php the_category(); ?></span>
+            <span class="post__date"><?php echo get_the_date();?></span>
+            <span class="post__categories"><?php the_category(); ?></span>
+        </div>
+        <div class="post__excerpt">
+            <?php the_excerpt(); ?>
         </div>
     </article>
 

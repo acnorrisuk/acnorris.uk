@@ -22,7 +22,6 @@ html {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-size: 18px;
     line-height: 1.5;
-    color: $color-near-black;
     background-color: $color-near-white;
 }
 
@@ -41,6 +40,7 @@ p, ul, ol, pre, table {
 html, body {
     height: 100%;
     width: 100%;
+    color: $color-med-grey;
 }
 
 h1,
@@ -51,6 +51,7 @@ h5,
 h6 {
     margin-top: 2rem;
     line-height: 1.25;
+    color: $color-near-black;
 }
 
 a {
@@ -102,7 +103,6 @@ blockquote {
     font-size: 1rem;
     font-style: italic;
     background-color: #fff;
-    color: $color-med-grey;
     border-left: 3px solid $color-primary;  
     p:last-child {
         margin-bottom: 0.25rem;
@@ -158,6 +158,7 @@ input {
 
 .primary {
     grid-area: content;
+    max-width: $measure-regular;
 }
 
 .secondary {
@@ -220,7 +221,6 @@ input {
 /* posts page */
 .back-to-blog {
     display: inline-block;
-    color: $color-med-grey;
     font-size: 0.8rem;
     margin-bottom: 1.5rem;
     text-decoration: none;
@@ -229,20 +229,14 @@ input {
         text-decoration-skip: ink;
     }
 }
-.post:not(:first-of-type) {
-    padding-top: 2rem;
-}
-
-.post:not(:last-of-type) {
-    margin-bottom: 1rem;
-}
 
 .posts .post {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-bottom: 2.5rem;
     @media(min-width: $break-medium) {
-        padding-top: 1.5rem;
-        padding-bottom: 1.5rem;
+        padding-bottom: 3rem;
+    }
+    &:last-of-type {
+        padding-bottom: 0;
     }
 }
 
@@ -250,10 +244,15 @@ input {
     max-width: $measure-regular;
 }
 
+.post__date {
+    margin-top: 0;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
 .post__meta {
-    color: $color-med-grey;
     font-size: 0.9rem;
-    margin-top: 0.5rem;
+    margin-top: 0.25rem;
     a {
         color: inherit;
     }
@@ -269,7 +268,7 @@ input {
 }
 
 .posts .post__title {
-    font-size: 1.25rem;
+    font-size: 1.3rem;
     @media(min-width: $break-medium) {
         font-size: 1.5rem;
     }
@@ -277,18 +276,27 @@ input {
 
 .posts .post-categories {
     padding-left: 0;
+    margin-bottom: 0;
     list-style-type: none;
     li {
         display: inline-flex;
     }
     a {
         padding: 0.2rem 0.4rem;
+        font-size: 0.85rem;
         color: #fff;
         background-color: $color-primary;
         &:hover {
             color: #fff;
             background-color: darken($color-primary, 5%);
         }
+    }
+}
+
+.post__excerpt {
+    margin-top: 1rem;
+    p:last-child {
+        margin-bottom: 0;
     }
 }
 
@@ -323,14 +331,13 @@ input {
 }
 
 .pagination {
-    padding-top: 2rem;
+    padding-top: 3rem;
 }
 
 .pagination a,
 .pagination .current {
     text-decoration: none;
     padding: 0.5rem;
-    color: $color-med-grey;
 }
 
 .pagination a:hover,
@@ -369,11 +376,11 @@ input {
 
 .page-title {
     margin-top: 0;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     font-size: 2rem;
     @media(min-width: $break-medium) {
         font-size: 2.5rem;
-        margin-bottom: 2rem;
+        margin-bottom: 3rem;
     }
     &:after {
         display: block;
@@ -394,8 +401,7 @@ input {
 .post-archive__list li {
     font-weight: normal;
     margin-bottom: 0;
-    color: $color-med-grey;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     margin-top: 0.5rem;
 }
 
@@ -409,7 +415,6 @@ input {
     text-align: center;
     padding-top: 2rem;
     padding-bottom: 2rem;
-    color: $color-med-grey;
 }
 
 .site-footer__contents {
