@@ -1,0 +1,14 @@
+{
+  "lang": "en-GB",
+  "background_color": "#ffffff",
+  "name": "Adam Norris – Front-End Developer",
+  "short_name": "acnorrisuk",
+  "display": "browser",
+  "icons": [
+    {
+      "src": "add-later.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ]
+}

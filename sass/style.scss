@@ -6,18 +6,17 @@ Author URI: http://acnorris.uk
 
 @import 'vendor/normalize';
 @import 'vendor/atom-one-light';
-//@import 'vendor/monokai-sublime';
 
-$color-primary: #009688;
-$color-primary-darken: #00796B; // passes WCAG AA color contrast
-$color-near-black: #3a3a3a;
-$color-med-grey: #6a6a6a;
-$color-near-white: #fafafa;
-
-$break-medium: 60em; /* 960px at 16px */
-$break-large: 100em; /* 1600px at 16px */
-
-$measure-regular: 650px;
+:root {
+    --color-primary: #606c88;
+    --color-primary-darken:#3f4c6b;
+    --color-near-black: #3a3a3a;
+    --color-med-grey: #555555;
+    --color-near-white: #fafafa;
+    --break-medium: 60em;
+    --break-large: 100em;
+    --measure-regular: 650px;
+}
     
 html {
     box-sizing: border-box;
@@ -41,7 +40,7 @@ p, ul, ol, pre, table {
 html, body {
     height: 100%;
     width: 100%;
-    color: $color-med-grey;
+    color: var(--color-med-grey);
 }
 
 h1,
@@ -52,11 +51,11 @@ h5,
 h6 {
     margin-top: 2rem;
     line-height: 1.25;
-    color: $color-near-black;
+    color: var(--color-near-black);
 }
 
 a {
-    color: $color-primary-darken;
+    color: var(--color-primary);
     text-decoration: underline;
     text-decoration-skip: ink;
     &:hover {
@@ -77,8 +76,8 @@ img {
 figure {
     margin: 1.5rem 0;
     padding: 1rem 1.5em;
-    background-color: $color-near-white;
-    border-left: 3px solid $color-primary;
+    background-color: var(--color-near-white);
+    border-left: 3px solid var(--color-primary);
     font-size: 0.9rem;
     h2, h3, h4 {
         margin-top: 0.5rem;
@@ -90,7 +89,7 @@ figure {
 
 figcaption, cite {
     display: block;
-    color: $color-near-black;
+    color: var(--color-near-black);
     font-size: 0.8rem;
     text-align: right;
     padding-top: 0.5rem;
@@ -103,15 +102,15 @@ blockquote {
     padding-left: 1.5rem;
     font-size: 1rem;
     font-style: italic;
-    background-color: $color-near-white;
-    border-left: 3px solid $color-primary;  
+    background-color: var(--color-near-white);
+    border-left: 3px solid var(--color-primary);  
     p:last-child {
         margin-bottom: 0.25rem;
     }
 }
 
 code {
-    background-color: $color-near-white;
+    background-color: var(--color-near-white);
     
 }
 
@@ -121,14 +120,15 @@ pre code {
 }
 
 input {
-    padding: 0.5rem;
-    border: 1px solid darken($color-near-white, 5%);
+    padding: 0.4rem;
+    border: 1px solid #ccc;
+    border-right: 0;
     width: 100%;
 }
 
 /* layout */
 .wrap {
-    max-width: $measure-regular;
+    max-width: var(--measure-regular);
     margin: 0 auto;
     padding-left: 1rem;
     padding-right: 1rem;
@@ -141,16 +141,16 @@ input {
 .pad {
     padding-top: 2rem;
     padding-bottom: 2rem;
-    @media(min-width: $break-medium) {
+    @media(min-width: var(--break-medium)) {
         padding-top: 4rem;
         padding-bottom: 4rem;
     }
 }
 
 .has-sidebar {
-    @media(min-width: $break-medium) {
+    @media(min-width: var(--break-medium)) {
         display: grid;
-        grid-template-columns: $measure-regular 1fr 12rem;
+        grid-template-columns: var(--measure-regular) 1fr 12rem;
         grid-template-areas: 
         "content . sidebar";
     }
@@ -158,12 +158,12 @@ input {
 
 .primary {
     grid-area: content;
-    max-width: $measure-regular;
+    max-width: var(--measure-regular);
 }
 
 .secondary {
     margin-top: 3rem;
-    @media(min-width: $break-medium) {
+    @media(min-width: var(--break-medium)) {
         margin-top: 0;
         grid-area: sidebar;
     }
@@ -171,8 +171,11 @@ input {
 
 .archive-title {
     text-transform: uppercase;
-    font-size: 0.9rem;
-    color: $color-primary-darken;
+    font-size: 1rem;
+    @media(min-width: var(--break-medium)) {
+        font-size: 0.9rem;
+    }
+    color: var(--color-primary);
     padding-bottom: 0.25rem;
 }
 
@@ -190,7 +193,7 @@ input {
 /* header */
 .masthead {
     color: #fff;
-    background-color: $color-primary;
+    background-color: var(--color-primary);
     padding-top: 2rem;
     padding-bottom: 2rem;
     a {
@@ -208,25 +211,23 @@ input {
     font-weight: 700;
     font-size: 1.75rem;
     line-height: 1;
-    opacity: 0.95;
 }
 
 .masthead__tagline {
     font-size: 0.9rem;
-    opacity: 0.8;
     text-transform: uppercase;
     margin-bottom: 0;
 }
 
 /* posts page */
 .back-to-blog {
-    color: $color-primary-darken;
+    color: var(--color-primary);
     display: inline-block;
     font-size: 0.85rem;
     margin-bottom: 1.5rem;
     text-decoration: none;
     &:hover {
-        color: $color-primary-darken;
+        color: var(--color-primary-darken);
         text-decoration: underline;
         text-decoration-skip: ink;
     }
@@ -234,7 +235,7 @@ input {
 
 .posts .post {
     padding-bottom: 2.5rem;
-    @media(min-width: $break-medium) {
+    @media(min-width: var(--break-medium)) {
         padding-bottom: 3rem;
     }
     &:last-of-type {
@@ -243,7 +244,7 @@ input {
 }
 
 .post-wrap {
-    max-width: $measure-regular;
+    max-width: var(--measure-regular);
 }
 
 .post__date {
@@ -264,14 +265,14 @@ input {
     margin-top: 0;
     margin-bottom: 0;
     font-size: 1.75rem;
-    @media(min-width: $break-medium) {
+    @media(min-width: var(--break-medium)) {
         font-size: 2rem;
     }
 }
 
 .posts .post__title {
-    font-size: 1.3rem;
-    @media(min-width: $break-medium) {
+    font-size: 1.4rem;
+    @media(min-width: var(--break-medium)) {
         font-size: 1.5rem;
     }
 }
@@ -287,10 +288,10 @@ input {
         padding: 0.2rem 0.4rem;
         font-size: 0.85rem;
         color: #fff;
-        background-color: $color-primary;
+        background-color: var(--color-primary);
         &:hover {
             color: #fff;
-            background-color: $color-primary-darken;
+            background-color: var(--color-primary-darken);
         }
     }
 }
@@ -310,7 +311,7 @@ input {
     margin-top: 3rem;
     display: flex;
     font-size: 0.9rem;
-    color: $color-primary-darken;
+    color: var(--color-primary);
 }
 
 
@@ -320,14 +321,14 @@ input {
     text-decoration: none;
     color: inherit;
     &:hover {
-        color: $color-primary-darken;
+        color: var(--color-primary-darken);
     }   
 }
 
 .post__links a {
     text-decoration: none;
     &:hover {
-        color: $color-primary-darken;
+        color: var(--color-primary-darken);
         text-decoration: underline;
         text-decoration-skip: ink;
     }
@@ -349,14 +350,14 @@ input {
 
 .pagination a,
 .pagination .current {
-    color: $color-med-grey;
+    color: var(--color-med-grey);
     text-decoration: none;
     padding: 0.5rem;
 }
 
 .pagination a:hover,
 .pagination .current {
-    color: $color-primary-darken;
+    color: var(--color-primary);
 }
 .pagination .current {
     text-decoration: underline;
@@ -377,11 +378,15 @@ input {
 .submit {
     display: flex;
     background: none;
-    border: 1px solid darken($color-near-white, 5%);
-    background-color: $color-near-white;
-    border-left: 0;
-    padding: 0 0.5rem;
+    background-color: var(--color-primary);
+    border: 0;
+    border-radius: 0;
+    padding: 0.5rem 0.75rem;
+    &:hover {
+        background-color: var(--color-primary-darken);
+    }
     svg {
+        fill: #fff;
         margin: auto;
         width: 0.95rem;
         height: 0.95rem;
@@ -392,7 +397,7 @@ input {
     margin-top: 0;
     margin-bottom: 2rem;
     font-size: 2rem;
-    @media(min-width: $break-medium) {
+    @media(min-width: var(--break-medium)) {
         font-size: 2.5rem;
         margin-bottom: 3rem;
     }
@@ -401,7 +406,7 @@ input {
         content: '';
         width: 3rem;
         padding-bottom: 0.25rem;
-        border-bottom: 3px solid $color-primary;
+        border-bottom: 3px solid var(--color-primary);
     }
 }
 
@@ -415,7 +420,10 @@ input {
 .post-archive__list li {
     font-weight: normal;
     margin-bottom: 0;
-    font-size: 0.95rem;
+    font-size: 1rem;
+    @media(min-width: var(--break-medium)) {
+        font-size: 0.95rem;
+    }
     margin-top: 0.5rem;
 }
 
@@ -452,7 +460,7 @@ input {
 .site-footer__social a {
     color: inherit;
     &:hover {
-        color: $color-primary;
+        color: var(--color-primary);
     }
 }
 
