@@ -2,7 +2,24 @@
 
 <div class="pad main-grid">
 
-    
+<header class="masthead">
+
+    <!-- <div>
+        <a class="home-link" href="<?php echo esc_url(site_url('/')); ?>">
+            <p class="masthead__logo"><?php bloginfo('name');?></p>
+            <p class="masthead__tagline"><?php bloginfo('description');?></p>
+        </a>
+    </div> -->
+    <nav class="main-navigation">
+        <ul>
+            <li><a href="#"><span aria-hidden="true">&#8627;</span> Blog</a></li>
+            <li><a href="#"><span aria-hidden="true">&#8627;</span> About</a></li>
+            <li><a href="#"><span aria-hidden="true">&#8627;</span> Projects</a></li>
+        </ul>
+    </nav>
+
+</header>
+
     <?php if( is_home() ) : ?>
     
     <h1 class="page-title">Blog</h1>

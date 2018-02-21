@@ -12,16 +12,5 @@
     <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?>>
-    
-            <!-- <header class="masthead">
-            
-                <div class="wrap wrap--large masthead__content">
-                    <a class="home-link" href="<?php echo esc_url(site_url('/')); ?>">
-                        <p class="masthead__logo"><?php bloginfo('name');?></p>
-                        <p class="masthead__tagline"><?php bloginfo('description');?></p>
-                    </a>
-                </div>
-            
-            </header> -->
 
         <main>
