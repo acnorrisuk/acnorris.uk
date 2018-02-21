@@ -35,8 +35,7 @@ import plumber from 'gulp-plumber';
 import notify from 'gulp-notify';
 import browserSync from 'browser-sync';
 const reload = browserSync.reload;
-//import critical from 'critical';
-//import del from 'del';
+// import critical from 'critical';
 // gulp include https://www.npmjs.com/package/gulp-include
 
 /** ================================
@@ -132,21 +131,24 @@ const onError = function (err) {
      this.emit('end');
 }
 
-// clear out the dist folder
-// gulp.task('clean', () => {
-//     return del.sync([
-//         paths.dist
-//     ])
-// });
-
 gulp.task('watch', ['default'], () => {
-    //gulp.watch(paths.scripts, ['scripts']);
     gulp.watch(paths.styles, ['styles']);
     gulp.watch(paths.php, ['php']);
 });
 
+// gulp.task('critical', ['default'], function(){
+//     critical.generate({
+//         inline: true,
+//         base: paths.dist,
+//         src: 'index.php',
+//         dest: 'index2.php',
+//         minify: true,
+//         width: 320,
+//         height: 480
+//     });
+// });
+
 gulp.task('default', [
-    // 'clean',
     'images',
     'styles',
     'php',

@@ -11,8 +11,9 @@ $break-medium: 60em;
 $break-large: 100em;
 
 :root {
-    --color-primary: #606c88;
+    --color-primary: #63708C;
     --color-primary-darken:#3f4c6b;
+    --color-bg: #feffe7;
     --color-near-black: #3a3a3a;
     --color-med-grey: #555555;
     --color-near-white: #fafafa;
@@ -43,6 +44,10 @@ html, body {
     height: 100%;
     width: 100%;
     color: var(--color-med-grey);
+}
+
+body {
+    background-color: var(--color-bg);
 }
 
 h1,
@@ -152,15 +157,24 @@ input {
 .has-sidebar {
     @media(min-width: $break-medium) {
         display: grid;
-        grid-template-columns: var(--measure-regular) 1fr 12rem;
+        grid-template-columns: var(--measure-regular) 1fr auto;
         grid-template-areas: 
         "content . sidebar";
     }
 }
 
+.main-grid {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    @media(min-width: 650px) {
+        padding: 0;
+        display: grid;
+        grid-template-columns: auto 2rem minmax(auto, 600px) 1.5rem 1fr;
+    }
+}
+
 .primary {
-    grid-area: content;
-    max-width: var(--measure-regular);
+    grid-column-start: 3;
 }
 
 .secondary {
@@ -397,19 +411,15 @@ input {
 }
 
 .page-title {
-    margin-top: 0;
-    margin-bottom: 2rem;
-    font-size: 2rem;
-    @media(min-width: $break-medium) {
-        font-size: 2.5rem;
-        margin-bottom: 3rem;
-    }
-    &:after {
-        display: block;
-        content: '';
-        width: 3rem;
-        padding-bottom: 0.25rem;
-        border-bottom: 3px solid var(--color-primary);
+    margin: 0;
+    padding-bottom: 1rem;
+    color: var(--color-med-grey);
+    font-family: 'Monoton', cursive;
+    font-size: calc(2vw + 5rem);
+    @media(min-width: 650px) {
+        padding-bottom: 0;
+        writing-mode: vertical-lr;
+        font-size: calc(6vw + 6rem);
     }
 }
 
