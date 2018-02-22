@@ -8,6 +8,7 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <link rel="manifest" href="<?php echo get_template_directory_uri();?>/manifest.json">
         <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Bungee+Shade|Gravitas+One|Peralta|Ribeye+Marrow" rel="stylesheet">
 
     <?php wp_head(); ?>
     </head>
