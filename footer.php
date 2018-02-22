@@ -1,6 +1,6 @@
         </main>
         
-            <footer class="site-footer">
+            <!-- <footer class="site-footer">
                <div class="wrap site-footer__contents">
                 <svg style="display: none;">
                     <symbol id="twitter-icon" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
@@ -42,7 +42,7 @@
                     
                     <p class="site-footer__colophon">&copy; <?php echo date('Y'); ?> | acnorrisuk</p>
                 </div>
-            </footer>
+            </footer> -->
         
     <?php wp_footer(); ?>
 

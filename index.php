@@ -12,9 +12,9 @@
     </div> -->
     <nav class="main-navigation">
         <ul>
-            <li><a href="#"><span aria-hidden="true">&#8627;</span> Blog</a></li>
-            <li><a href="#"><span aria-hidden="true">&#8627;</span> About</a></li>
-            <li><a href="#"><span aria-hidden="true">&#8627;</span> Projects</a></li>
+            <li><a href="/acnorrisuk"><span aria-hidden="true">&#8627;</span> Home</a></li>
+            <li><a href="blog"><span aria-hidden="true">&#8627;</span> Blog</a></li>
+            <li><a href="about"><span aria-hidden="true">&#8627;</span> About</a></li>
         </ul>
     </nav>
 
