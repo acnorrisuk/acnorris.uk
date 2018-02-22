@@ -48,7 +48,7 @@ $break-large: 100em;
 html {
     box-sizing: border-box;
     font-family: var(--font-default);
-    font-size: 18px;
+    font-size: 130%;
     line-height: 1.5;
 }
 
@@ -70,7 +70,6 @@ p, ul, ol, pre, table {
 
 html, body {
     color: var(--color-med-grey);
-    font-size: 110%;
 }
 
 body {
@@ -280,7 +279,7 @@ input {
     }
     a {
         position: relative;
-        font-size: 1.25rem;
+        font-size: 1.2rem;
         @include highlight;
     }
 }
@@ -338,7 +337,7 @@ input {
 }
 
 .posts .post__title {
-    font-size: calc(0.25vw + 1.3rem);
+    font-size: calc(0.25vw + 1.2rem);
     a {
         &:hover,
         &:focus {
@@ -360,7 +359,7 @@ input {
         display: inline-block;
         padding: 0.1rem 0.3rem;
         padding-top: 0.2rem;
-        font-size: 0.7rem;
+        font-size: 0.6rem;
         text-transform: uppercase;
         letter-spacing: 0.025rem;
         border: 2px solid var(--color-med-grey);
@@ -475,9 +474,9 @@ input {
 
 .page-title {
     line-height: 1;
-    margin-top: 1rem;
-    margin-bottom: 0;
-    padding-bottom: 1rem;
+    margin: 0;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     color: var(--color-med-grey);
     font-family: var(--font-display);
     font-weight: 400;
@@ -485,19 +484,16 @@ input {
     font-size: calc(3vw + 4rem);
     @media(min-width: 800px) {
         grid-column-start: 2;
-        margin-top: 0;
+        padding-top: 0;
         padding-bottom: 0;
         writing-mode: vertical-lr;
-        font-size: calc(6vw + 6rem);
+        font-size: calc(5vw + 5rem);
     }
-    // @media(min-width: 1280px) {
-    //     font-weight: bold;
-    // }
 }
 
 .home-grid .page-title {
     writing-mode: initial;
-    font-size: calc(3vw + 4rem);
+    font-size: calc(3vw + 2.5rem);
     margin-bottom: 1.5rem;
 }
 
