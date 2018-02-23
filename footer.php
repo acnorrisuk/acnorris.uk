@@ -50,6 +50,12 @@
         // only fire highlight.js on single post pages
         echo '<script>hljs.initHighlightingOnLoad();</script>';
     } ?>
+
+    <script src="<?php echo get_template_directory_uri(); ?>/js/vendor/fit-text.js"></script>
+    <script>
+      window.fitText( document.querySelector(".page-title") );
+    // window.fitText( document.getElementById("responsive_headline"), 1.2 );
+    </script>
     
     </body>
 </html>

@@ -26,15 +26,15 @@
     
     <?php elseif(is_search() ): ?>
     
-    <h1 class="page-title">Posts including "<?php echo $s ?>"</h1>
+    <h1 class="page-title"><?php echo $s ?></h1>
     
     <?php elseif(is_category() ): ?>
     
-    <h1 class="page-title"><?php echo 'Posted In: ' . single_cat_title( '', false ); ?></h1>
+    <h1 class="page-title"><?php echo single_cat_title( '', false ); ?></h1>
     
     <?php elseif(is_archive() ): ?>
     
-    <h1 class="page-title"><?php echo 'Posted In: ' . str_replace('Year: ','', get_the_archive_title()); ?></h1>
+    <h1 class="page-title"><?php echo str_replace('Year: ','', get_the_archive_title()); ?></h1>
     
     <?php else : ?>
     
