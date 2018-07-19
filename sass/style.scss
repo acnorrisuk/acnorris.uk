@@ -37,11 +37,6 @@ html {
     line-height: 1.5;
 }
 
-html, body {
-    height: 100%;
-    min-height: 100%;
-}
-
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -50,20 +45,23 @@ html, body {
     margin-top: 0;
 }
 
+html, body {
+    height: 100%;
+    min-height: 100%;
+    font-size: 100%;
+    color: var(--color-text);
+}
+
+body {
+    background-color: var(--color-bg);
+}
+
 p, ul, ol, pre, table {
     margin-bottom: 1.5rem;
 }
 
 ::selection {
     background: var(--color-highlight);
-}
-
-html, body {
-    color: var(--color-text);
-}
-
-body {
-    background-color: var(--color-bg);
 }
 
 h1,
@@ -196,6 +194,10 @@ hr {
 .main {
     padding-top: 2em;
     padding-bottom: 2em;
+    @media(min-width: 60em) {
+        padding-left: 2em;
+        padding-right: 2em;
+    }
     align-self: center;
 }
 
@@ -206,7 +208,7 @@ hr {
 */
 
 .home-intro {
-    @media(min-width: 30em) {
+    @media(min-width: 45em) {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-column-gap: 6em;
@@ -227,7 +229,7 @@ hr {
 .home-intro__image {
     padding-top: 2em;
     mix-blend-mode: luminosity;
-    @media(min-width: 30em) {
+    @media(min-width: 45em) {
         padding-top: 0;
     }
 }
