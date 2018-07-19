@@ -17,15 +17,12 @@ Author URI: http://acnorris.uk
 * SETTINGS
 * ================================
 */
-$break-medium: 60em;
-$break-large: 100em;
 
 :root {
-    --color-primary: #63708C;
     --color-text: #4a4a4a;
     --font-default: 'Bitter', serif;
     --color-highlight: green;
-    --color-bg: white;
+    --color-bg: #fff6e8;
 }
 
 /*
@@ -197,6 +194,7 @@ hr {
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 6em;
     align-items: center;
+    background-color: var(--color-bg);
 }
 
 .home-intro__text {
@@ -206,6 +204,10 @@ hr {
     p:last-child {
         margin-bottom: 0;
     }
+}
+
+.home-intro__image {
+    mix-blend-mode: luminosity;
 }
 
 /*
@@ -220,11 +222,29 @@ hr {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    > * {
+        flex: 1 1 calc(100% / 3);
+    }
 }
 
 .colophon {
     margin-bottom: 0;
 }
+
+.site-footer__social {
+    text-align: center;
+    svg {
+        padding-left: 0.25em;
+        padding-right: 0.25em;
+        height: 34px;
+        width: 34px;
+    }
+}
+
+.theme-picker {
+    text-align: right;
+}
+
 
 // figure {
 //     margin: 1.5rem 0;
