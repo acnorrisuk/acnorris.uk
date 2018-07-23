@@ -19,7 +19,8 @@ Author URI: http://acnorris.uk
 */
 
 :root {
-    --color-text: #4a4a4a;
+    --color-headings: #454545;
+    --color-text: #656565;
     --font-default: 'Bitter', serif;
     --color-highlight: green;
     --color-bg: #fff6e8;
@@ -32,9 +33,6 @@ Author URI: http://acnorris.uk
 */
 html {
     box-sizing: border-box;
-    font-family: var(--font-default);
-    font-size: 100%;
-    line-height: 1.5;
 }
 
 *, *:before, *:after {
@@ -53,7 +51,10 @@ html, body {
 }
 
 body {
+    font-family: var(--font-default);
+    line-height: 1.5;
     background-color: var(--color-bg);
+    font-size: calc(1em * 2vw);
 }
 
 p, ul, ol, pre, table {
@@ -61,13 +62,18 @@ p, ul, ol, pre, table {
 }
 
 ::selection {
-    background: var(--color-highlight);
+    background: black;
+    color: white;
 }
 
 h1,
 h2,
 h3 {
     line-height: 1.25;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: var(--color-headings);
 }
 
 svg {
@@ -83,6 +89,18 @@ img {
 hr {
     margin-bottom: 0;
     border-top: 1px solid var(--color-text);
+}
+
+a,
+a:link,
+a:visited {
+    color: inherit;
+}
+
+a:hover,
+a:focus {
+    background-color: black;
+    color: white;
 }
 
 /*
@@ -104,6 +122,7 @@ hr {
     font-size: 1.75rem;
     font-weight: bold;
     line-height: 1.3;
+    color: var(--color-headings);
 }
 
 .list-reset {
@@ -121,10 +140,6 @@ hr {
 .plain-link {
     text-decoration: none;
     color: inherit;
-}
-
-.text-light {
-    opacity: 0.85;
 }
 
 /*
@@ -166,9 +181,12 @@ hr {
 .masthead__logo {
     margin-top: 0;
     margin-bottom: 0;
-    font-size: 1.3em;
-    position: relative;
-    top: 0.05em; /* optically balance with nav */
+    font-size: 1.75em;
+    @media(min-width: 30em) {
+        font-size: 1.25em;
+        position: relative;
+        top: 0.05em; /* optically balance with nav */
+    }
 }
 
 .masthead__nav {
@@ -197,8 +215,17 @@ hr {
     @media(min-width: 60em) {
         padding-left: 2em;
         padding-right: 2em;
+        padding-top: 4em;
+        padding-bottom: 4em;
+    }
+    p:last-child {
+        margin-bottom: 0;
     }
     align-self: center;
+}
+
+.primary {
+    max-width: 40em;
 }
 
 /*
@@ -231,6 +258,49 @@ hr {
     mix-blend-mode: luminosity;
     @media(min-width: 45em) {
         padding-top: 0;
+    }
+}
+
+/*
+* ================================
+* POSTS
+* ================================
+*/
+
+.posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+    grid-gap: 4em;
+}
+
+.post__categories {
+    a:not(:first-child) {
+        padding-left: 0.25em;
+    }
+}
+
+.post__title {
+    margin-bottom: 0.5em;
+    font-size: 1.4em;
+}
+
+.post__categories, 
+.post__date {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 0.95em;
+}
+
+.post__date {
+}
+
+.pagination {
+    padding-top: 4em;
+    text-align: center;
+    font-size: 1.1em;
+    .page-numbers {
+        padding-left: 0.2em;
+        padding-right: 0.2em;
     }
 }
 
@@ -270,10 +340,13 @@ hr {
         padding-bottom: 0;
     }
     a {
-        opacity: 0.85;
+        display: block;
         &:hover,
         &:focus {
-            opacity: 1;
+            svg {
+                background-color: black;
+                fill: white;;
+            }
         }
     }
     svg {

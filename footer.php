@@ -1,7 +1,7 @@
          </main>
 
          
-         <footer class="site-footer text-light">
+         <footer class="site-footer">
             
             <hr>
 

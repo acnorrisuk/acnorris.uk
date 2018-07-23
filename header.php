@@ -22,7 +22,7 @@
 
                     <h1 class="masthead__logo"><a class="plain-link" href="<?php echo esc_url(site_url('/')); ?>">Adam Norris</a></h1>
 
-                    <nav class="masthead__nav text-light">
+                    <nav class="masthead__nav">
                         <ul class="list-reset list-inline">
                             <li><a class="plain-link" href="about">About</a></li>
                             <li><a class="plain-link" href="blog">Blog</a></li>
