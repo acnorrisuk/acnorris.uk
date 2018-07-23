@@ -42,12 +42,6 @@
             
         <?php wp_footer(); ?>
 
-        <?php if(is_single()) {
-            // only fire highlight.js on single post pages
-            echo '<script>hljs.initHighlightingOnLoad();</script>';
-        } ?>
-
-
         <div><!-- site-wrapper -->
     
     </body>

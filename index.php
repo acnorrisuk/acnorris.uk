@@ -14,7 +14,14 @@
     
     <?php elseif(is_category() ): ?>
     
-    <h1 class="page-title"><?php echo single_cat_title( '', false ); ?></h1>
+    <h1 class="page-title"><?php echo single_cat_title( '', false ); ?>
+
+    <?php 
+        $paged = get_query_var('paged');
+        if($page !== 0) {
+            echo '- page ' . $paged;
+        } ?>
+    </h1>
     
     <?php else : ?>
     
