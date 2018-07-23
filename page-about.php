@@ -3,7 +3,7 @@
 get_header(); ?>
 
     <div class="primary">
-        <h1 class="screen-reader-text"><?php the_title(); ?></h1>
+        <h1 class="page-title"><?php the_title(); ?></h1>
             <h2>Who am I?</h2>
             <p>My name is Adam Norris and I am a front-end developer currently working for a digital agency based in Leeds, UK.</p>
             <h2>My Interests</h2>
