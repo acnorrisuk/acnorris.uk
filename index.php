@@ -4,7 +4,13 @@
 
     <?php if( is_home() ) : ?>
     
-    <h1 class="page-title">Blog</h1>
+    <h1 class="page-title">Blog
+        <?php 
+        $paged = get_query_var('paged');
+        if($page !== 0) {
+            echo '- page ' . $paged;
+        } ?>
+    </h1>
     
     <?php elseif(is_category() ): ?>
     
