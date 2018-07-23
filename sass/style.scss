@@ -20,7 +20,7 @@ Author URI: http://acnorris.uk
 
 :root {
     --color-headings: #454545;
-    --color-text: #656565;
+    --color-text: #5a5a5a;
     --font-default: 'Bitter', serif;
     --color-highlight: green;
     --color-bg: #fff6e8;
@@ -58,7 +58,7 @@ body {
     line-height: 1.5;
     background-color: var(--color-bg);
     @media(min-width: 60em) {
-        line-height: 1.6;
+        line-height: 1.7;
     }
 }
 
@@ -82,7 +82,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 h2:not(:first-of-type) {
-    margin-top: 1.75rem;
+    margin-top: 2rem;
 }
 
 svg {
@@ -294,7 +294,7 @@ a:focus {
 }
 
 .post__title {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.25em;
     font-size: 1.4em;
     line-height: 1.3;
 }
@@ -303,7 +303,7 @@ a:focus {
 .post__date {
     margin-top: 0;
     margin-bottom: 0;
-    font-size: 0.95em;
+    font-size: 0.9em;
 }
 
 .pagination {

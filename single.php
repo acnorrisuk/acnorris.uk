@@ -5,8 +5,8 @@
     
     <article class="post">
         <h1 class="post__title"><?php the_title(); ?></h1>
-            <p class="post__date"><?php echo get_the_date();?></p>
-            <p class="post__categories"><?php the_category(', '); ?></p>
+            <span class="post__date"><?php echo get_the_date();?> in </span>
+            <span class="post__categories"><?php the_category(', '); ?></span>
          <div class="post__content"><?php the_content();?></div>
     </article>
 
