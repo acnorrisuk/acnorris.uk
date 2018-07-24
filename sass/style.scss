@@ -335,6 +335,23 @@ a:focus {
     padding-top: 2em;
 }
 
+.post__links {
+    max-width: 40em;
+    padding-top: 4em;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+}
+
+.post__previous,
+.post__next {
+    flex: 0 1 45%;
+}
+
+.post__next {
+    text-align: right;
+}
+
 /*
 * ================================
 * SITE FOOTER
