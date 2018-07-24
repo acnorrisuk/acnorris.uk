@@ -21,7 +21,6 @@ Author URI: http://acnorris.uk
     --color-headings: #454545;
     --color-text: #5a5a5a;
     --font-default: 'Bitter', serif;
-    --color-highlight: green;
     --color-bg: #fff6e8;
 }
 
@@ -202,8 +201,10 @@ a:focus {
         padding-top: 1rem;
         padding-left: 0.75rem;
         padding-right: 0.75rem;
+        font-size: 1.2rem;
 
         @media(min-width: 30rem) {
+            font-size: 1rem;
             padding-left: 1.5rem;
             padding-right: 0;
             padding-top: 0;
@@ -218,6 +219,7 @@ a:focus {
 */
 
 .main {
+    overflow-x: auto;
     padding-top: 2rem;
     padding-bottom: 2rem;
     @media(min-width: 60rem) {
@@ -283,7 +285,10 @@ a:focus {
 .posts {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-    grid-gap: 4rem;
+    grid-gap: 3rem;
+    @media(min-width: 40em) {
+        grid-gap: 4rem;
+    }
 }
 
 .post__categories {
@@ -416,6 +421,7 @@ figure {
     margin-left: 0;
     margin-top: 2rem;
     margin-bottom: 2rem;
+    margin-right: 0;
     padding: 1.5rem;
     border: 1px solid var(--color-text);
 }

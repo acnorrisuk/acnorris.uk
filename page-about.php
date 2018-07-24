@@ -5,21 +5,19 @@ get_header(); ?>
     <div class="primary">
         <h1 class="page-title"><?php the_title(); ?></h1>
             <h2>Who am I?</h2>
-            <p>My name is Adam Norris and I am a front-end developer currently working for a digital agency based in Leeds, UK.</p>
-            <h2>My Interests</h2>
-            <p>I work mostly as a front-end developer but my skills extend into into design, SEO and web analysis. We mostly build static sites and custom Wordpress themes for clients requiring a CMS. I am particularly interested in site optimisation, security and accessibility.</p>
-            <h2>My Skills</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis repudiandae, neque sed!</p>
-            <ul class="list-columns">
-            <li>Front-End Development</li>
-            <li>Custom Wordpress Theming</li>
-            <li>Web Design</li>
-            <li>UX Research</li>
-            <li>Analytics Reporting</li>
-            <li>Technical SEO</li>
-            <li>QA Auditing</li>
-            <li>Blog Writing</li>
-            <li>HTML Emails</li>
+            <p>My name is Adam Norris and I'm a front-end developer currently working for a digital agency based in Leeds, UK.</p>
+            <h2>My Philosophy</h2>
+            <p>I am most interested in building website which are accessible, performant and have a good user experience.</p>
+            <h2>My Toolbox</h2>
+            <p>I try to keep things simple and only use tools when they're really needed. Here's some I use on a regular basis:</p>
+            <ul>
+            <li>WordPress / Craft CMS</li>
+            <li>Photoshop / Sketch</li>
+            <li>Git / Github / Bitbucket</li>
+            <li>Gulp / Codekit</li>
+            <li>VS Code</li>
+            <li>Deploybot HQ</li>
+            <li>Google Analytics / Tag manager</li>
             </ul>
             <h2>Find Me</h2>
             <p>You can find me on the various social channels below or alternatively, contact me at <a href="mailto:acnorrisuk@gmail.com">acnorrisuk@gmail.com</a></p>

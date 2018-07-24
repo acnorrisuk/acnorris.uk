@@ -35,7 +35,7 @@ function acnorrisuk_scripts() {
   wp_enqueue_style( 'acnorrisuk', get_stylesheet_uri(), null, filemtime(get_stylesheet_directory() . '/style.css') );
 
   if(is_single()) {
-	wp_enqueue_style( 'highlight-css', get_template_directory_uri() . '/css/vendor/monokai-sublime.css', null, filemtime(get_stylesheet_directory() . '/style.css') );
+	wp_enqueue_style( 'highlight-css', get_template_directory_uri() . '/css/vendor/monokai-sublime.css');
   	wp_enqueue_script( 'highlight-js', get_template_directory_uri() . '/js/vendor/highlight.pack.min.js', array(), false, true);
   }
 }
