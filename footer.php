@@ -42,6 +42,10 @@
             
         <?php wp_footer(); ?>
 
+        <?php if(is_single()){
+            	echo '<script>hljs.initHighlightingOnLoad();</script>';
+        } ?>
+
         <div><!-- site-wrapper -->
     
     </body>

@@ -36,7 +36,6 @@ function acnorrisuk_scripts() {
 
   if(is_single()) {
   	wp_enqueue_script( 'highlight-js', get_template_directory_uri() . '/js/vendor/highlight.pack.min.js', array(), false, true);
-	echo '<script>hljs.initHighlightingOnLoad();</script>';
   }
 }
 add_action( 'wp_enqueue_scripts', 'acnorrisuk_scripts');
