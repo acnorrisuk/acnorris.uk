@@ -26,15 +26,13 @@
                     </li>
                 </ul>
 
-                <div class="theme-picker">
-                    <ul class="list-reset list-inline">
-                        <li>R</li>
-                        <li>Y</li>
-                        <li>G</li>
-                        <li>B</li>
-                    </ul>
-
-                </div>
+                <fieldset class="theme-picker">
+                <legend class="screen-reader-text">Choose a theme:</legend>
+                    <input id="light" class="screen-reader-text" type="radio" name="theming" checked>
+                    <label for="light"><span class="screen-reader-text">Standard</span></label>
+                    <input id="highcontrast" class="screen-reader-text" type="radio" name="theming">
+                    <label for="highcontrast"><span class="screen-reader-text">High Contrast</span></label>
+              </fieldset>
 
             </div>
 
@@ -45,6 +43,74 @@
         <?php if(is_single()){
             	echo '<script>hljs.initHighlightingOnLoad();</script>';
         } ?>
+
+        <script>
+        
+            /* Theming */ 
+            (function (){
+            
+                /* Variables */
+                const rootStyle = document.documentElement.style;
+                const radios = document.getElementsByName('theming');
+
+
+                const themes = {
+                    'light': {
+                            'fontDefault': 'Bitter, serif',
+                            'textColor': '#5a5a5a',
+                            'textColorDark': '#454545',
+                            'backgroundColor': '#fff3e1'
+                        }
+                }
+            
+                /* Set theme from localStorage */
+                rootStyle.setProperty('--font-default', localStorage.getItem('themeFontDefault'));
+                rootStyle.setProperty('--color-text', localStorage.getItem('themeTextColor'));
+                rootStyle.setProperty('--color-text-dark', localStorage.getItem('themeTextColorDark'));
+                rootStyle.setProperty('--color-bg', localStorage.getItem('themeBgColor'));
+            
+                /* Loop through radio buttons */
+                for(var i = 0; i < radios.length; i++){
+                    radios[i].onclick = function(){
+                    setThemeColours(this.id);
+                    }
+                }
+            
+                /* set theme colour based on radio id */
+                function setThemeColours(id) {
+                switch(id) {
+                    case 'light':
+                        rootStyle.setProperty('--font-default', themes.light.fontDefault);
+                        rootStyle.setProperty('--color-text', themes.light.textColor);
+                        rootStyle.setProperty('--color-text-dark', themes.light.textColorDark);
+                        rootStyle.setProperty('--color-bg', themes.light.backgroundColor);
+                        localStorage.setItem("themeFontDefault", 'Bitter, serif');
+                        localStorage.setItem("themeTextColor", '#5a5a5a');
+                        localStorage.setItem("themeTextColorDark", '#454545');
+                        localStorage.setItem("themeBgColor", '#fff3e1');
+                        break;
+                    case 'highcontrast':
+                        rootStyle.setProperty('--font-default', 'monospace');
+                        rootStyle.setProperty('--color-text', '#00b100');
+                        rootStyle.setProperty('--color-text-dark', '#00b100');
+                        rootStyle.setProperty('--color-bg', '#000');
+                        localStorage.setItem("themeFontDefault", 'monospace');
+                        localStorage.setItem("themeTextColor", '#00b100');
+                        localStorage.setItem("themeTextColorDark", '#00b100');
+                        localStorage.setItem("themeBgColor", '#000');
+                        break;
+                    default:
+                        rootStyle.setProperty('--font-default', 'Bitter, serif');
+                        rootStyle.setProperty('--color-text', '#5a5a5a');
+                        rootStyle.setProperty('--color-text-dark', '#454545');
+                        rootStyle.setProperty('--color-bg', '#fff3e1');
+                }
+                }
+            
+            })();
+
+
+        </script>
 
         <div><!-- site-wrapper -->
     
