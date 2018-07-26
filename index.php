@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 
-<div>
-
     <?php if( is_home() ) : ?>
     
     <h1 class="page-title">Blog
@@ -37,7 +35,5 @@
     </div>
 
     <?php the_posts_pagination( array( 'mid_size'  => 3 ) ); ?>
-
-</div>
 
 <?php get_footer(); ?>
