@@ -30,8 +30,8 @@
                 <legend class="screen-reader-text">Choose a theme:</legend>
                     <input id="light" class="screen-reader-text" type="radio" name="theming" checked>
                     <label for="light"><span class="screen-reader-text">Standard</span></label>
-                    <input id="highcontrast" class="screen-reader-text" type="radio" name="theming">
-                    <label for="highcontrast"><span class="screen-reader-text">High Contrast</span></label>
+                    <input id="dark" class="screen-reader-text" type="radio" name="theming">
+                    <label for="dark"><span class="screen-reader-text">High Contrast</span></label>
               </fieldset>
 
             </div>
@@ -60,8 +60,14 @@
                             'textColor': '#5a5a5a',
                             'textColorDark': '#454545',
                             'backgroundColor': '#fff3e1'
+                        },
+                    'dark': {
+                            'fontDefault': 'monospace',
+                            'textColor': '#009900',
+                            'textColorDark': '#00b200',
+                            'backgroundColor': '#1a221a'    
                         }
-                }
+                    };
             
                 /* Set theme from localStorage */
                 rootStyle.setProperty('--font-default', localStorage.getItem('themeFontDefault'));
@@ -84,27 +90,27 @@
                         rootStyle.setProperty('--color-text', themes.light.textColor);
                         rootStyle.setProperty('--color-text-dark', themes.light.textColorDark);
                         rootStyle.setProperty('--color-bg', themes.light.backgroundColor);
-                        localStorage.setItem("themeFontDefault", 'Bitter, serif');
-                        localStorage.setItem("themeTextColor", '#5a5a5a');
-                        localStorage.setItem("themeTextColorDark", '#454545');
-                        localStorage.setItem("themeBgColor", '#fff3e1');
+                        localStorage.setItem("themeFontDefault", themes.light.fontDefault);
+                        localStorage.setItem("themeTextColor", themes.light.textColor);
+                        localStorage.setItem("themeTextColorDark", themes.light.textColorDark);
+                        localStorage.setItem("themeBgColor", themes.light.backgroundColor);
                         break;
-                    case 'highcontrast':
-                        rootStyle.setProperty('--font-default', 'monospace');
-                        rootStyle.setProperty('--color-text', '#00b100');
-                        rootStyle.setProperty('--color-text-dark', '#00b100');
-                        rootStyle.setProperty('--color-bg', '#000');
-                        localStorage.setItem("themeFontDefault", 'monospace');
-                        localStorage.setItem("themeTextColor", '#00b100');
-                        localStorage.setItem("themeTextColorDark", '#00b100');
-                        localStorage.setItem("themeBgColor", '#000');
+                    case 'dark':
+                        rootStyle.setProperty('--font-default', themes.dark.fontDefault);
+                        rootStyle.setProperty('--color-text', themes.dark.textColor);
+                        rootStyle.setProperty('--color-text-dark', themes.dark.textColorDark);
+                        rootStyle.setProperty('--color-bg', themes.dark.backgroundColor);
+                        localStorage.setItem("themeFontDefault", themes.dark.fontDefault);
+                        localStorage.setItem("themeTextColor", themes.dark.textColor);
+                        localStorage.setItem("themeTextColorDark", themes.dark.textColorDark);
+                        localStorage.setItem("themeBgColor", themes.dark.backgroundColor);
                         break;
                     default:
-                        rootStyle.setProperty('--font-default', 'Bitter, serif');
-                        rootStyle.setProperty('--color-text', '#5a5a5a');
-                        rootStyle.setProperty('--color-text-dark', '#454545');
-                        rootStyle.setProperty('--color-bg', '#fff3e1');
-                }
+                        rootStyle.setProperty('--font-default', themes.light.fontDefault);
+                        rootStyle.setProperty('--color-text', themes.light.textColor);
+                        rootStyle.setProperty('--color-text-dark', themes.light.textColorDark);
+                        rootStyle.setProperty('--color-bg', themes.light.backgroundColor);
+                    }
                 }
             
             })();
