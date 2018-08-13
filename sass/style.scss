@@ -17,11 +17,18 @@ Author URI: http://acnorris.uk
 * ================================
 */
 
-:root {
+html[data-theme="default"] {
     --color-text-dark: #454545;
     --color-text: #5a5a5a;
     --font-default: 'Bitter', serif;
     --color-bg: #fff3e1;
+}
+
+html[data-theme="dark"] {
+    --color-text-dark: #00b200;
+    --color-text: #009900;
+    --font-default: monospace;
+    --color-bg: #1a221a;  
 }
 
 /*

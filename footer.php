@@ -28,8 +28,8 @@
 
                 <fieldset class="theme-picker">
                 <legend class="screen-reader-text">Choose a theme:</legend>
-                    <input id="light" class="screen-reader-text" type="radio" name="theming" checked>
-                    <label for="light"><span class="screen-reader-text">Standard</span></label>
+                    <input id="default" class="screen-reader-text" type="radio" name="theming" checked>
+                    <label for="default"><span class="screen-reader-text">Standard</span></label>
                     <input id="dark" class="screen-reader-text" type="radio" name="theming">
                     <label for="dark"><span class="screen-reader-text">High Contrast</span></label>
               </fieldset>
@@ -50,68 +50,72 @@
             (function (){
             
                 /* Variables */
-                const rootStyle = document.documentElement.style;
+                //const rootStyle = document.documentElement.style;
+                const html = document.querySelector('html');
                 const radios = document.getElementsByName('theming');
 
 
-                const themes = {
-                    'light': {
-                            'fontDefault': 'Bitter, serif',
-                            'textColor': '#5a5a5a',
-                            'textColorDark': '#454545',
-                            'backgroundColor': '#fff3e1'
-                        },
-                    'dark': {
-                            'fontDefault': 'monospace',
-                            'textColor': '#009900',
-                            'textColorDark': '#00b200',
-                            'backgroundColor': '#1a221a'    
-                        }
-                    };
+                // const themes = {
+                //     'light': {
+                //             'fontDefault': 'Bitter, serif',
+                //             'textColor': '#5a5a5a',
+                //             'textColorDark': '#454545',
+                //             'backgroundColor': '#fff3e1'
+                //         },
+                //     'dark': {
+                //             'fontDefault': 'monospace',
+                //             'textColor': '#009900',
+                //             'textColorDark': '#00b200',
+                //             'backgroundColor': '#1a221a'    
+                //         }
+                //     };
             
-                /* Set theme from localStorage */
-                rootStyle.setProperty('--font-default', localStorage.getItem('themeFontDefault'));
-                rootStyle.setProperty('--color-text', localStorage.getItem('themeTextColor'));
-                rootStyle.setProperty('--color-text-dark', localStorage.getItem('themeTextColorDark'));
-                rootStyle.setProperty('--color-bg', localStorage.getItem('themeBgColor'));
+                // /* Set theme from localStorage */
+                // rootStyle.setProperty('--font-default', localStorage.getItem('themeFontDefault'));
+                // rootStyle.setProperty('--color-text', localStorage.getItem('themeTextColor'));
+                // rootStyle.setProperty('--color-text-dark', localStorage.getItem('themeTextColorDark'));
+                // rootStyle.setProperty('--color-bg', localStorage.getItem('themeBgColor'));
             
                 /* Loop through radio buttons */
                 for(var i = 0; i < radios.length; i++){
                     radios[i].onclick = function(){
-                    setThemeColours(this.id);
+                    console.log(this.id);
+                    console.log(html.getAttribute('theme'));
+                    html.setAttribute('data-theme', this.id)
+                    // setThemeColours(this.id);
                     }
                 }
             
                 /* set theme colour based on radio id */
-                function setThemeColours(id) {
-                switch(id) {
-                    case 'light':
-                        rootStyle.setProperty('--font-default', themes.light.fontDefault);
-                        rootStyle.setProperty('--color-text', themes.light.textColor);
-                        rootStyle.setProperty('--color-text-dark', themes.light.textColorDark);
-                        rootStyle.setProperty('--color-bg', themes.light.backgroundColor);
-                        localStorage.setItem("themeFontDefault", themes.light.fontDefault);
-                        localStorage.setItem("themeTextColor", themes.light.textColor);
-                        localStorage.setItem("themeTextColorDark", themes.light.textColorDark);
-                        localStorage.setItem("themeBgColor", themes.light.backgroundColor);
-                        break;
-                    case 'dark':
-                        rootStyle.setProperty('--font-default', themes.dark.fontDefault);
-                        rootStyle.setProperty('--color-text', themes.dark.textColor);
-                        rootStyle.setProperty('--color-text-dark', themes.dark.textColorDark);
-                        rootStyle.setProperty('--color-bg', themes.dark.backgroundColor);
-                        localStorage.setItem("themeFontDefault", themes.dark.fontDefault);
-                        localStorage.setItem("themeTextColor", themes.dark.textColor);
-                        localStorage.setItem("themeTextColorDark", themes.dark.textColorDark);
-                        localStorage.setItem("themeBgColor", themes.dark.backgroundColor);
-                        break;
-                    default:
-                        rootStyle.setProperty('--font-default', themes.light.fontDefault);
-                        rootStyle.setProperty('--color-text', themes.light.textColor);
-                        rootStyle.setProperty('--color-text-dark', themes.light.textColorDark);
-                        rootStyle.setProperty('--color-bg', themes.light.backgroundColor);
-                    }
-                }
+                // function setThemeColours(id) {
+                // switch(id) {
+                //     case 'light':
+                //         rootStyle.setProperty('--font-default', themes.light.fontDefault);
+                //         rootStyle.setProperty('--color-text', themes.light.textColor);
+                //         rootStyle.setProperty('--color-text-dark', themes.light.textColorDark);
+                //         rootStyle.setProperty('--color-bg', themes.light.backgroundColor);
+                //         localStorage.setItem("themeFontDefault", themes.light.fontDefault);
+                //         localStorage.setItem("themeTextColor", themes.light.textColor);
+                //         localStorage.setItem("themeTextColorDark", themes.light.textColorDark);
+                //         localStorage.setItem("themeBgColor", themes.light.backgroundColor);
+                //         break;
+                //     case 'dark':
+                //         rootStyle.setProperty('--font-default', themes.dark.fontDefault);
+                //         rootStyle.setProperty('--color-text', themes.dark.textColor);
+                //         rootStyle.setProperty('--color-text-dark', themes.dark.textColorDark);
+                //         rootStyle.setProperty('--color-bg', themes.dark.backgroundColor);
+                //         localStorage.setItem("themeFontDefault", themes.dark.fontDefault);
+                //         localStorage.setItem("themeTextColor", themes.dark.textColor);
+                //         localStorage.setItem("themeTextColorDark", themes.dark.textColorDark);
+                //         localStorage.setItem("themeBgColor", themes.dark.backgroundColor);
+                //         break;
+                //     default:
+                //         rootStyle.setProperty('--font-default', themes.light.fontDefault);
+                //         rootStyle.setProperty('--color-text', themes.light.textColor);
+                //         rootStyle.setProperty('--color-text-dark', themes.light.textColorDark);
+                //         rootStyle.setProperty('--color-bg', themes.light.backgroundColor);
+                //     }
+                // }
             
             })();
 
