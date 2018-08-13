@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <link rel="manifest" href="<?php echo get_template_directory_uri();?>/manifest.json">
-        <link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Bitter:700|Source+Sans+Pro:400,400i,700" rel="stylesheet">
 
     <?php wp_head(); ?>
     </head>

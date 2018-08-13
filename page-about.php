@@ -13,11 +13,12 @@ get_header(); ?>
             <ul>
             <li>WordPress / Craft CMS</li>
             <li>Photoshop / Sketch</li>
-            <li>Git / Github / Bitbucket</li>
-            <li>Gulp / Codekit</li>
             <li>VS Code</li>
+            <li>Git</li>
+            <li>Github / Bitbucket</li>
+            <li>Gulp / Codekit</li>
             <li>Deploybot HQ</li>
-            <li>Google Analytics / Tag manager</li>
+            <li>Google Analytics</li>
             </ul>
             <h2>Find Me</h2>
             <p>You can find me on the various social channels below or alternatively, contact me at <a href="mailto:acnorrisuk@gmail.com">acnorrisuk@gmail.com</a></p>
