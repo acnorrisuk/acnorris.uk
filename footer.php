@@ -55,7 +55,9 @@
 
                 /* check localstorage for theme */
                 let currentTheme = localStorage.getItem('theme');
-                html.setAttribute('data-theme', currentTheme);
+                if(currentTheme) {
+                    html.setAttribute('data-theme', currentTheme);
+                }
             
                 /* Loop through radio buttons & apply theme onclick */
                 for(var i = 0; i < radios.length; i++){
